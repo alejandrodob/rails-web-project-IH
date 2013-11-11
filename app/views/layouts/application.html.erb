@@ -2,15 +2,26 @@
 <html>
 <head>
   <title>Manderley</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
   <%= csrf_meta_tags %>
+
+
 </head>
-<body>
 
-<%= yield %>
+  <body class="padding margin">
 
-</body>
-<footer>
-    <p>Footer puesto a manubrio</p>
-</footer>
+    <header class="padding-top">
+    </header>
+
+    <section class="row bck light">
+
+    <%= yield %>
+
+    </section>
+
+    <footer>
+    </footer>
+
+  </body>
+
 </html>
