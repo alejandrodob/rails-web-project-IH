@@ -20,5 +20,36 @@
   <%= @movie.synopsis %>
 </p>
 
+
+<h4>Comments</h4>
+<% @movie.comments.each do |comment| %>
+  <p>
+    <strong>Author:</strong>
+    <%= comment.author %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<h4>Add a comment:</h4>
+<%= form_for([@movie, @movie.comments.build]) do |f| %>
+  <p>
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </p>
+  <p>
+    
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
+
