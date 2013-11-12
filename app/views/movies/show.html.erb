@@ -20,5 +20,14 @@
   <%= @movie.synopsis %>
 </p>
 
+
+<h4>Comments</h4>
+<%= render @movie.comments %>
+
+<h4>Add a comment:</h4>
+<%= render 'comments/form' %>
+
+
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
+
