@@ -13,9 +13,6 @@ class CommentsController < ApplicationController
     @comment = @movie.comments.build
   end
 
-  def edit
-  end
-
   def create
     @comment = @movie.comments.build comment_params
 

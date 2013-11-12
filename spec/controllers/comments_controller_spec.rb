@@ -37,15 +37,6 @@ describe CommentsController do
     end
   end
 
-  describe "GET edit" do
-    it "assigns the requested comment as @comment" do
-      comment = FactoryGirl.create :comment
-      movie = comment.movie
-      get :edit, {movie_id: movie.to_param, id: comment.to_param}, valid_session
-      expect(assigns(:comment)).to eq(comment)
-    end
-  end
-
   describe "POST create" do
     describe "with valid params" do
       it "creates a new Comment" do
