@@ -6,5 +6,6 @@ FactoryGirl.define do
     year 1985
     duration 1
     synopsis "Once upon a time..."
+    genres ["Drama", "Action"]
   end
 end

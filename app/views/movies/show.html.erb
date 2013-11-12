@@ -16,6 +16,11 @@
 </p>
 
 <p>
+  <strong>Genres:</strong>
+  <%= @movie.genres.each do |genre| genre end %>
+</p>
+
+<p>
   <strong>Synopsis:</strong>
   <%= @movie.synopsis %>
 </p>
