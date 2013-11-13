@@ -2,16 +2,6 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :destroy]
   before_action :set_movie, only: [:index, :new, :create, :destroy]
 
-  def index
-    @comments = @movie.comments
-  end
-
-  def show
-  end
-
-  def new
-    @comment = @movie.comments.build
-  end
 
   def create
     @comment = @movie.comments.build comment_params
@@ -26,16 +16,6 @@ class CommentsController < ApplicationController
       end
     end
   end
-
-  def destroy
-    @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to @movie }
-      format.json { head :no_content }
-    end
-  end
-
-
 
 
   private
