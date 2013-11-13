@@ -38,18 +38,21 @@ describe PeopleController do
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved person as @person" do
-        Comment.any_instance.stub(:save).and_return(false)
         movie = FactoryGirl.create :movie
+        Person.any_instance.stub(:save).and_return(false)
         post :create, {movie_id: movie.to_param, person: valid_attributes}, valid_session
         expect(assigns(:person)).to be_a_new(Person)
+        expect(assigns(:person)).not_to be_persisted
       end
 
       it "re-renders the 'new' template" do
-        Comment.any_instance.stub(:save).and_return(false)
         movie = FactoryGirl.create :movie
+        Person.any_instance.stub(:save).and_return(false)
         post :create, {movie_id: movie.to_param, person: valid_attributes}, valid_session
         expect(response).to render_template("new")
       end
     end
+
+
   end
 end
