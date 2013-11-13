@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :destroy]
-  before_action :set_movie, only: [:index, :new, :create, :destroy]
+  before_action :set_movie, only: [:index, :new, :create]
 
 
   def create

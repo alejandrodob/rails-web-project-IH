@@ -1,8 +1,8 @@
 Manderley::Application.routes.draw do
   resources :movies do
     resources :comments, shallow: true
-    resources :people, shallow: true
   end
+  resources :people
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

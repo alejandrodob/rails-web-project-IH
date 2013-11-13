@@ -9,7 +9,7 @@ class CreateCasts < ActiveRecord::Migration
       t.timestamps
     end
  
-    Person.find_each do |p|
+    Person.all.find_each do |p|
       Cast.create({movie: p.movie, person: p})
     end
     remove_column :people, :movie_id
@@ -18,7 +18,7 @@ class CreateCasts < ActiveRecord::Migration
   # db:rollback
   def down
     add_column :people, :movie_id, :string
-    Cast.find_each do |c|
+    Cast.all.find_each do |c|
       c.person.movie = c.movie
       c.person.save
     end
