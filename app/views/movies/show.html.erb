@@ -20,6 +20,11 @@
   <%= @movie.synopsis %>
 </p>
 
+<p>
+  <strong>People:</strong>
+  <ul><%= render @movie.people %></ul>
+</p>
+
 
 <h4>Comments</h4>
 <%= render @movie.comments %>
