@@ -1,0 +1,25 @@
+es:
+  index:
+    title: Lista de peliculas
+  movies:
+    title: Titulo
+    year: Anyo
+    duration: Duracion
+    synopsis: Sinopsis
+    options:
+      show: Mostrar
+      edit: Editar
+      destroy: Destruir
+
+  movie:
+    edit:
+      header: Editar pelicula
+    form:
+      error: 'esta pelicula no puede ser guardada:'
+
+
+  links:
+    back: Atras
+    new_movie: Nueva pelicula
+    people: Gente
+    add_person: Anade persona

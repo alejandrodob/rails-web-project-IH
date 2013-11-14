@@ -1,0 +1,25 @@
+en:
+  index:
+    title: Movies List
+  movies:
+    title: Title
+    year: Year
+    duration: Duration
+    synopsis: Synopsis
+    options:
+      show: Show
+      edit: Edit
+      destroy: Destroy
+
+  movie:
+    edit:
+      header: Editing movie
+    form:
+      error: 'prohibited this movie from being saved:'
+
+
+  links:
+    back: Back
+    new_movie: New movie
+    people: People
+    add_person: Add person

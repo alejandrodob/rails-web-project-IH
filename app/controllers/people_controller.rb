@@ -25,7 +25,6 @@ class PeopleController < ApplicationController
         format.json { render json: @person.errors, status: :unprocessable_entity }
       end
     end
-
   end
 
   def destroy
