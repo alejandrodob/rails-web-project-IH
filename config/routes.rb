@@ -1,6 +1,7 @@
 Manderley::Application.routes.draw do
   resources :movies do
-    
+    get "/casts/new", to: "movies#new_cast", as: "new_cast"
+    post "/casts", to: "movies#create_cast", as: "create_cast"
     resources :comments, shallow: true
   end
   resources :people do

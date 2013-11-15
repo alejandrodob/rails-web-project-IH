@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_action :set_person, only: [:show, :edit, :update, :destroy, :new_cast]
+  before_action :set_person, only: [:show, :edit, :update, :destroy, :new_cast, :create_cast]
 
 
   def index
@@ -60,10 +60,10 @@ class PeopleController < ApplicationController
     respond_to do |format|
       if @cast.save
         format.html { redirect_to people_path, notice: "Cast added" }
-        format.json { render action: :show, status: :created, location: people_path}
+        format.json { render action: :show, status: :created, location: people_path }
       else
         format.html { render action: :new }
-        format.json { render json: @cast.errors, status: :unprocessable_entity}
+        format.json { render json: @cast.errors, status: :unprocessable_entity }
       end
     end
   end

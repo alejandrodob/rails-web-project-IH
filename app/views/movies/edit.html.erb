@@ -4,4 +4,5 @@
 
 
 <%= link_to t('movies.options.show'), @movie %> |
-<%= link_to t('links.back'), movies_path %> 
+<%= link_to t('links.back'), movies_path %>  |
+<%= link_to 'Add person to cast', movie_new_cast_path(@movie) %>
