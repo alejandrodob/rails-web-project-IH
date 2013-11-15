@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :movie_id %>
-    <%= f.select :movie_id,
+    <%= f.label :person_id %>
+    <%= f.select :person_id,
     Person.all.map { |p| [ p.name, p.id ] } %>
   </div>
 

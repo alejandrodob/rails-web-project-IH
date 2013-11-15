@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20131113150646) do
     t.datetime "updated_at"
     t.text     "synopsis"
     t.integer  "year"
-    t.string   "genres",     default: [], array: true
   end
 
   create_table "people", force: true do |t|

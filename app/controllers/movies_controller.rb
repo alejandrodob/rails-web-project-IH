@@ -90,6 +90,6 @@ class MoviesController < ApplicationController
     end
 
     def cast_params
-      params.require(:cast).permit(:people_id, :role)
+      params.require(:cast).permit(:person_id, :role)
     end
 end

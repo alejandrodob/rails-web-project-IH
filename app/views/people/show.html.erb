@@ -10,6 +10,24 @@
   <%= @person.last_name %>
 </p>
 
+<p>
+  <strong>Appearances: </strong>
+  <% if @person.movies.empty? %>
+    <strong> No movies added yet...</strong>
+  <% else %>
+    <ul>
+      <% @person.casts.each do |m| %>
+        <li>
+          <%= m.movie.title%>
+          (
+          <%= m.role.titleize %>
+          )
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
+
 <%= link_to 'Add to movie cast', person_new_cast_path(@person) %>
 
 

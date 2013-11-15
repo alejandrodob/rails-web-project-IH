@@ -20,7 +20,24 @@
   <%= @movie.synopsis %>
 </p>
 
-
+<p>
+  <% if @movie.people.empty? %>
+    <strong> No people in here</strong>
+  <% else %>
+    <strong>People:</strong>
+    <ul>
+      <% @movie.casts.each do |c| %>
+        <li>
+          <%= c.person.name%>
+          (
+          <%= c.role.titleize %>
+          )
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
+</p>
 
 
 <h4>Comments</h4>
