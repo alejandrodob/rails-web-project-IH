@@ -13,7 +13,7 @@
 <p>
   <strong>Appearances: </strong>
   <% if @person.movies.empty? %>
-    <strong> No movies added yet...</strong>
+    <p> No movies added yet...</p>
   <% else %>
     <ul>
       <% @person.casts.each do |m| %>
