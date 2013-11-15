@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_action :set_person, only: [:show, :edit, :update, :destroy]
+  before_action :set_person, only: [:show, :edit, :update, :destroy, :new_cast]
 
 
   def index
@@ -7,6 +7,9 @@ class PeopleController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
   end
 
   def new
@@ -48,16 +51,37 @@ class PeopleController < ApplicationController
     end
   end
 
+  def new_cast
+    @cast = @person.casts.build
+  end
+
+  def create_cast
+    @cast = @person.casts.build(cast_params)
+    respond_to do |format|
+      if @cast.save
+        format.html { redirect_to people_path, notice: "Cast added" }
+        format.json { render action: :show, status: :created, location: people_path}
+      else
+        format.html { render action: :new }
+        format.json { render json: @cast.errors, status: :unprocessable_entity}
+      end
+    end
+  end
+
 
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_person
-    @person = Person.find(params[:id])
+    @person = Person.find(params[:person_id] || params[:id])
   end
  
   # Never trust parameters from the scary internet, only allow the white list through.
   def person_params
     params.require(:person).permit(:first_name, :last_name)
+  end
+
+  def cast_params
+    params.require(:cast).permit(:movie_id, :role)
   end
 
 end

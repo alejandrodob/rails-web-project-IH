@@ -1,9 +1,12 @@
 Manderley::Application.routes.draw do
   resources :movies do
-    get "/cast", to: "movies#cast", as: "cast"
+    
     resources :comments, shallow: true
   end
-  resources :people
+  resources :people do
+    get "/casts/new", to: "people#new_cast", as: "new_cast"
+    post "/casts", to: "people#create_cast", as: "create_cast"
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
