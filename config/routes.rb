@@ -1,5 +1,6 @@
 Manderley::Application.routes.draw do
   resources :movies do
+    get "/cast", to: "movies#cast", as: "cast"
     resources :comments, shallow: true
   end
   resources :people
