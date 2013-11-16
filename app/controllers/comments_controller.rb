@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to @movie, notice: 'Comment was successfully created.' }
         format.json { render action: 'show', status: :created, location: @comment }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to @movie, notice: 'Comment could not be created.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end

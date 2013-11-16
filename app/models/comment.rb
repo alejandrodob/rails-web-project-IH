@@ -3,5 +3,4 @@ class Comment < ActiveRecord::Base
 
   validates_presence_of :body
   validates_length_of :body, maximum: 500
-  validates_presence_of :movie
 end

@@ -1,4 +1,5 @@
 <%= form_for([@movie, @movie.comments.build]) do |f| %>
+
   <p>
     <%= f.label :author %><br />
     <%= f.text_field :author %>

@@ -7,7 +7,7 @@ class Movie < ActiveRecord::Base
   validates_uniqueness_of :title
 
 
-  scope :last_at_least, ->(n){ where('duration < ?', n) }
+  scope :lasts_at_least, ->(n){ where('duration < ?', n) }
 
 
 

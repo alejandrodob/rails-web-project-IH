@@ -21,10 +21,10 @@
 </p>
 
 <p>
+  <strong>People:</strong>
   <% if @movie.people.empty? %>
     <p> No people in here</p>
   <% else %>
-    <strong>People:</strong>
     <ul>
       <% @movie.casts.each do |c| %>
         <li>
