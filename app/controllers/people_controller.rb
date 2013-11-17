@@ -62,7 +62,7 @@ class PeopleController < ApplicationController
         format.html { redirect_to people_path, notice: "Cast added" }
         format.json { render action: :show, status: :created, location: people_path }
       else
-        format.html { render action: :new }
+        format.html { render action: :new_cast }
         format.json { render json: @cast.errors, status: :unprocessable_entity }
       end
     end
