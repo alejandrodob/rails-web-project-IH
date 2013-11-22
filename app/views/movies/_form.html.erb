@@ -1,4 +1,4 @@
-<%= form_for(@movie) do |f| %>
+<%= form_for @movie, :html => { :multipart => true } do |f| %>
   <% if @movie.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@movie.errors.count, "error") %><%= t('movie.form.error') %></h2>
@@ -25,6 +25,9 @@
   <div class="field">
     <%= f.label :synopsis %><br>
     <%= f.text_area :synopsis %>
+  </div>
+  <div>
+    <%= f.file_field :poster %>
   </div>
   <div class="actions">
     <%= f.submit %>

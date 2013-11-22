@@ -21,7 +21,10 @@
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
-        <td><%= movie.title %></td>
+        <td>
+          <%= image_tag movie.poster_url(:mini).to_s %>
+          <%= movie.title %>
+        </td>
         <td><%= movie.year %></td>
         <td><%= movie.duration %></td>
         <td><%= movie.synopsis %></td>
