@@ -41,6 +41,9 @@ gem "factory_girl_rails", group: [:test, :development]
 # Guard
 gem "guard-rspec", group: [:test, :development]
 
+# Jasmine
+gem "jasmine-rails", group: [:test, :development]
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
