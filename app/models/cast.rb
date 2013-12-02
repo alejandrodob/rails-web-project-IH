@@ -4,7 +4,7 @@ class Cast < ActiveRecord::Base
 
   validate :unique?
 
-  ROLES = [ "Actor", "Director", "Productor", "Make up"]
+  ROLES = [ "Actor", "Director", "Productor", "Makeup"]
 
   private
 
